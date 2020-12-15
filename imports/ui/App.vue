@@ -5,7 +5,7 @@
     </header>
     <ul>
       <Task
-        v-for="task in getTasks()"
+        v-for="task in students"
         v-bind:key="task._id"
         v-bind:task="task"
       />
@@ -16,6 +16,7 @@
 <script>
 import Vue from "vue";
 import Task from "./Task.vue";
+import { Students } from "../api/students.js"
  
 export default {
   components: {
@@ -24,14 +25,11 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    getTasks() {
-      return [
-        { _id: 1, text: "This is task 1" },
-        { _id: 2, text: "This is task 2" },
-        { _id: 3, text: "This is task 3" }
-      ];
-    }
+  methods: {},
+  meteor: {
+      students() {
+          return Students.find({}).fetch();
+      }
   }
 };
 </script>
