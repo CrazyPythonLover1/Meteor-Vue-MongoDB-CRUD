@@ -10,7 +10,7 @@
       </tr>
       <tr v-for="subject in subjects" v-bind:key="subject._id">
         <td>{{ subject.name }}</td>
-        <td>{{ subject.email }}</td>
+        <td><span v-for="student in subject.students" v-bind:key="student._id">{{ student }},</span> </td>
         <td  @click="removeItem(subject)"> <i class="mdi mdi-delete"></i> </td>
       </tr>
     </table>

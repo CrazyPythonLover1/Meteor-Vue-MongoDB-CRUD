@@ -2,25 +2,31 @@
     <div>
         <h1> Add Subject </h1>
         <form className="new-task" @submit.prevent="handleSubmit">
+        
+        <label class ="subject" >Add Subject:</label> 
         <input
           type="text"
           placeholder="Type to add new Subject"
           v-model="subjectData.name"
         />
-        
-        <input type="submit" value="submit" class="btn">
+        <label class ="student" >Students:</label> 
+        <select v-model="subjectData.students" multiple = true >
+            <option v-for="student in students" v-bind:key="student._id" > {{student.name}} </option>
+        </select>
+        <input type="submit" value="Submit" class="btn">
       </form>
     </div>
 </template>
 
 <script>
+import { Students } from "../../imports/api/students";
 import { Meteor } from 'meteor/meteor';
     export default {
          data() {
         return {
             subjectData: {
                 name: "",
-                // student: [],
+                students: [],
                 }
             };
         },
@@ -28,7 +34,7 @@ import { Meteor } from 'meteor/meteor';
       handleSubmit(event) {
         Meteor.call('createdSubject', {
         name: this.subjectData.name,
-        // student: this.subjectData.student,
+        students: this.subjectData.students,
         createdAt: new Date() // current time
       }, (error, result) => {
           if (error) {
@@ -43,6 +49,11 @@ import { Meteor } from 'meteor/meteor';
     },
     
   },
+  meteor: {
+    students() {
+      return Students.find({}).fetch();
+    },
+  },
     }
 </script>
 
@@ -55,20 +66,31 @@ form{
     border-radius:  20px;
 }
 label{
-    padding: 0 20px;
+    display: inline-block;
+    padding: 10px;
     color: #333;
     font-weight: bold;
 }
 input{
   width: 98%;
-  height: 60px;
+  height: 50px;
   outline: 0;
   padding: 20px;
   background-color: #f7f7f79e;
   border-radius:  10px;
 }
+.student{
+    margin-bottom: 40px;
+}
 select{
-    padding: 5px 20px
+    padding: 0px 0px;
+    outline: 0;
+    margin: 20px 0 -50px 20px
+}
+
+option{
+    padding: 3px 20px;
+    background: inherit;
 }
 
 .btn{
@@ -79,6 +101,8 @@ select{
     color: white;
     font-weight: bold;
     font-size: 18px;
-    margin: 20px 20px;
+    margin-top: 40px;
+    margin-left: 155px;
+    margin-bottom: 20px;
 }
 </style>
