@@ -6,7 +6,7 @@
       <tr>
         <th>Name</th>
         <th> Student </th>
-        <th> delete </th>
+        <th> Delete </th>
       </tr>
       <tr v-for="subject in subjects" v-bind:key="subject._id">
         <td>{{ subject.name }}</td>
@@ -36,14 +36,10 @@ export default {
           }
         } )
     }
-    // removeItem() {
-    //   Students.remove(this.student._id)
-    // }
+    
   },
   meteor: {
-    // $subscribe: {
-    //   allStudents: [],
-    // },
+    
     subjects() {
       return Subjects.find({}).fetch();
     },
@@ -55,10 +51,13 @@ export default {
 .styled-table {
     border-collapse: collapse;
     margin: 25px auto;
+    padding: 30px 0 ;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 600px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.542);
+    border-radius: 10px;
 }
 
 .styled-table thead tr {
@@ -69,6 +68,7 @@ export default {
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    text-align:center;
 }
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
@@ -80,5 +80,8 @@ export default {
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+i{
+    cursor: pointer;
 }
 </style>

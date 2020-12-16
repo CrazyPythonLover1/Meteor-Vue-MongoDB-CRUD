@@ -94,17 +94,18 @@ form{
     border-radius:  20px;
 }
 label{
-    padding: 0 20px;
+    display: inline-block;
+    padding: 10px;
     color: #333;
     font-weight: bold;
 }
 input{
   width: 98%;
-  height: 60px;
+  height: 40px;
   outline: 0;
   padding: 20px;
-  background-color: #f3f3f3;
-  border-radius:  10px;
+  background-color: #f7f7f7;
+  border-radius:  5px;
 }
 select{
     padding: 5px 20px
