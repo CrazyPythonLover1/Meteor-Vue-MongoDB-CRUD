@@ -2,9 +2,15 @@ body {
   padding: 10px;
   font-family: sans-serif;
   background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-image: linear-gradient(180deg, #FFB7B7 0%, #727272 100%), radial-gradient(60.91% 100% at 50% 0%, #FFD1D1 0%, #260000 100%), linear-gradient(238.72deg, #FFDDDD 0%, #720066 100%), linear-gradient(127.43deg, #00FFFF 0%, #FF4444 100%), radial-gradient(100.22% 100% at 70.57% 0%, #FF0000 0%, #00FFE0 100%), linear-gradient(127.43deg, #B7D500 0%, #3300FF 100%);
   background-attachment: fixed;
  
+
+
+background-blend-mode: screen, overlay, hard-light, color-burn, color-dodge, normal;
+
+
+
   position: absolute;
   top: 0;
   bottom: 0;
@@ -18,17 +24,23 @@ body {
 }
  
 .container {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
 }
  
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
+  text-align: center;
+  font-size: 24px;
+
+  a{
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 10px;
+  }
 }
  
 #login-buttons {
@@ -41,6 +53,8 @@ h1 {
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+  text-align: center;
+  
 }
  
 form {
@@ -89,18 +103,18 @@ li .text {
   margin-left: 10px;
 }
  
-li.checked {
-  color: #888;
-}
+// li.checked {
+//   color: #888;
+// }
  
-li.checked .text {
-  text-decoration: line-through;
-}
+// li.checked .text {
+//   text-decoration: line-through;
+// }
  
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
+// li.private {
+//   background: #eee;
+//   border-color: #ddd;
+// }
  
 header .hide-completed {
   float: right;
@@ -124,3 +138,5 @@ header .hide-completed {
     padding-bottom: 5px;
   }
 }
+
+

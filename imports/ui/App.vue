@@ -1,46 +1,51 @@
 <template>
   <div className="container">
-    <header>
-      <h1>Todo List</h1>
-    </header>
+    
+    <Header/>
+    <router-view />
     <ul>
-      <Task
+      <!-- <StudentList
         v-for="student in students"
         v-bind:key="student._id"
         v-bind:student="student"
-      />
-      <form className="new-task" @submit.prevent="handleSubmit">
+      /> -->
+      <!-- <form className="new-task" @submit.prevent="handleSubmit">
         <input
           type="text"
           placeholder="Type to add new tasks"
-          v-model="newTask"
+          v-model="newTask.text"
         />
-      </form>
+      </form> -->
     </ul>
+    
   </div>
 </template>
  
 <script>
 import Vue from "vue";
-import Task from "./Task.vue";
-import AddStudents from "./AddStudents.vue";
+import StudentList from "./StudentList.vue";
+// import AddStudents from "./AddStudents.vue";
 import { Students } from "../api/students.js";
 import { Meteor } from 'meteor/meteor';
+
+import Header from '../../client/components/layout/Header'
  
 export default {
   components: {
-    Task,
-    AddStudents
+    StudentList,
+    Header
   },
   data() {
     return {
-        newTask: ""
+        newTask: {
+          text: "",
+        }
     };
   },
   methods: {
       handleSubmit(event) {
         Meteor.call('createdStudent', {
-        text: this.newTask,
+        text: this.newTask.text,
         createdAt: new Date() // current time
       }, (error, result) => {
           if (error) {
@@ -65,3 +70,9 @@ export default {
   }
 };
 </script>
+
+<style  scoped>
+input{
+  height: 60px;
+}
+</style>

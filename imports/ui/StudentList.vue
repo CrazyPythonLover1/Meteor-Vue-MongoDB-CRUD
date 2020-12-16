@@ -1,11 +1,12 @@
 5  Create Task componentsimple-todos/imports/ui/Task.vue »
 <template>
-  <li>{{ student.text }}  <button class="delete" @click="removeItem"  >  X </button></li>
+  <li>{{ student.name }}  <button class="delete" @click="removeItem"  >  X </button></li>
 </template>
  
 <script>
 
 import { Students } from "../api/students.js";
+console.log(Students)
 import { Meteor } from 'meteor/meteor';
 
 export default {

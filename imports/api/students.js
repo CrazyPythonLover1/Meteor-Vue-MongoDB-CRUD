@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { Mongo } from 'meteor/mongo';
 
 export const Students = new Mongo.Collection('students')
+export const Subjects = new Mongo.Collection('subjects')
 
 if (Meteor.isServer) {
     Meteor.publish('allStudents', () => {
@@ -15,6 +16,12 @@ Meteor.methods({
     },
     deleteStudent(student) {
         return Students.remove({_id: student._id});
-    }
+    },
+    createdSubject(subject) {
+        return Subjects.insert(subject);
+    },
+    deleteSubject(subject) {
+        return Subjects.remove({_id: subject._id});
+    },
 }) 
 

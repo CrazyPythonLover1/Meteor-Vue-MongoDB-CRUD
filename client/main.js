@@ -6,6 +6,7 @@ import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 
 import AppComponent from '../imports/ui/App.vue';
+import router from './router'
 
 Meteor.startup(() => {
   Vue.use(VueMeteorTracker);
@@ -14,6 +15,7 @@ Meteor.startup(() => {
   const vuetify = new Vuetify({});
   new Vue({
     render: h => h(AppComponent),
+    router,
     vuetify,
   }).$mount('main')
 })
