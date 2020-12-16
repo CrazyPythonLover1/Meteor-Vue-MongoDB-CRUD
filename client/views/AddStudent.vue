@@ -26,9 +26,9 @@
           placeholder="Your date of birth"
           v-model="newTask.birth"
         />
-        <label name ="subject" multiple size = 6>Choose subject:</label>
-        <select name="subject" id="cars">
-            <option v-for="subject in subjects" v-bind:key="subject._id" value="volvo"> {{subject.name}} </option>
+        <label class ="subject" >Choose subject:</label> 
+        <select v-model="newTask.subjects" multiple = true >
+            <option v-for="subject in subjects" v-bind:key="subject._id" > {{subject.name}} </option>
         </select>
         <br>
         <input type="submit" value="Submit" class="btn">
@@ -49,7 +49,7 @@ export default {
             email: "",
             phone: "",
             birth: "",
-            subject: "",
+            subjects: [],
             }
         };
     },
@@ -60,6 +60,7 @@ export default {
         email: this.newTask.email,
         phone: this.newTask.phone,
         birth: this.newTask.birth,
+        subjects: this.newTask.subjects,
         createdAt: new Date() // current time
       }, (error, result) => {
           if (error) {
@@ -107,8 +108,18 @@ input{
   background-color: #f7f7f79e;
   border-radius:  5px;
 }
+.subject{
+    margin-bottom: 40px;
+}
 select{
-    padding: 5px 20px
+    padding: 0px 0px;
+    outline: 0;
+    margin: 20px 0 -50px 20px
+}
+
+option{
+    padding: 3px 20px;
+    background: inherit;
 }
 
 .btn{
@@ -119,6 +130,6 @@ select{
     color: white;
     font-weight: bold;
     font-size: 18px;
-    margin: 20px 20px;
+    margin: 20px 10px;
 }
 </style>

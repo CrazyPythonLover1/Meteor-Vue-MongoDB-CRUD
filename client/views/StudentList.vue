@@ -16,7 +16,7 @@
         <td>{{ student.email }}</td>
         <td>{{ student.phone }}</td>
         <td>{{ student.birth }}</td>
-        <td>{{ student.subject }}</td>
+        <td><span v-for="sub in student.subjects" v-bind:key="sub._id">{{ sub}},</span> </td>
         <td @click="removeItem(student)"> <i   class="mdi mdi-delete"></i> </td>
       </tr>
     </table>
@@ -53,8 +53,10 @@ export default {
     students() {
       return Students.find({}).fetch();
     },
+    
   },
 };
+
 </script>
 
 <style scoped>
