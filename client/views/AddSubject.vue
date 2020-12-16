@@ -49,7 +49,7 @@ import { Meteor } from 'meteor/meteor';
 <style  scoped>
 form{
     width: 600px !important;
-    background: #f1f1f1;
+    background: #f1f1f1d5;
     margin: 10px auto;
     padding: 30px 20px;
     border-radius:  20px;
@@ -64,7 +64,7 @@ input{
   height: 60px;
   outline: 0;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f7f7f79e;
   border-radius:  10px;
 }
 select{

@@ -88,7 +88,7 @@ export default {
 <style  scoped>
 form{
     width: 600px !important;
-    background: #f1f1f1;
+    background: #f1f1f1d5;
     margin: 10px auto;
     padding: 30px 20px;
     border-radius:  20px;
@@ -104,7 +104,7 @@ input{
   height: 40px;
   outline: 0;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #f7f7f79e;
   border-radius:  5px;
 }
 select{

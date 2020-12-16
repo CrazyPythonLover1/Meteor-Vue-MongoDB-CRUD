@@ -63,6 +63,10 @@ export default {
     text-align: center !important;
 }
 
+table{
+    padding: 20px !important;
+}
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px auto;
@@ -70,6 +74,8 @@ export default {
     font-family: sans-serif;
     min-width: 600px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background: #ffffff8a;
+    border-radius: 10px;
 }
 
 .styled-table thead tr {
@@ -80,6 +86,7 @@ export default {
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    text-align:center;
 }
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;

@@ -56,7 +56,7 @@ export default {
     font-family: sans-serif;
     min-width: 600px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.542);
+    background: #ffffff8a;
     border-radius: 10px;
 }
 
